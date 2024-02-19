@@ -70,7 +70,7 @@ let cost = document.getElementsByClassName('price'),
 function fetchData() {
     for (let i = 0; i < linkArray.length; i++) {
         setTimeout(() => {
-            fetch(link + linkArray[i])
+            fetch(link + linkArray[i], {mode: 'no-cors'})
                 .then(response => {
                         if (!response.ok) {
                             throw new Error('Network response was not ok');
