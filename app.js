@@ -71,6 +71,12 @@ function fetchData() {
     for (let i = 0; i < linkArray.length; i++) {
         setTimeout(() => {
             fetch(link + linkArray[i], {mode: 'no-cors'})
+                .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
             .then(response => response.json())
             .then(response => {
                 const price = JSON.stringify(response);
