@@ -88,7 +88,7 @@ function fetchData() {
                     // Handle the error as needed
                 });
         }, timer);
-        timer += 4000;
+        timer += 5000;
     }
 }
 
