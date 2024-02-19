@@ -82,6 +82,10 @@ function fetchData() {
                 const price = JSON.stringify(response);
                 cost[i].innerHTML += price.split('"')[5].substring(1).replace('.', ',');
             })
+                            .catch(error => {
+                    console.error('Error fetching data for', link + linkArray[i], ':', error);
+                    // Handle the error as needed
+                });
         }, timer);
         timer+=4000;
     }
