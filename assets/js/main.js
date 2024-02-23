@@ -9,14 +9,16 @@ let cost = document.getElementsByClassName('price'),
 
 function fetchData() {
     const tableBody = document.getElementById('table');
-    const data = []; // Масив для збереження отриманих даних
+    const lowestPrices = []; // Масив для збереження лише найнижчих цін
 
-    // Отримання сьогоднішньої дати
+    // Отримання сьогоднішньої дати та часу
     const currentDate = new Date();
     const day = String(currentDate.getDate()).padStart(2, '0');
     const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // "+1" бо місяці в JS починаються з 0
     const year = currentDate.getFullYear();
-    const today = `${day}.${month}.${year}`;
+    const hours = String(currentDate.getHours()).padStart(2, '0');
+    const minutes = String(currentDate.getMinutes()).padStart(2, '0');
+    const today = `${day}.${month}.${year}_${hours}:${minutes}`;
 
     for (let i = 0; i < linkArray.length; i++) {
         setTimeout(() => {
@@ -28,28 +30,20 @@ function fetchData() {
                     return response.json();
                 })
                 .then(response => {
-                    const price = JSON.stringify(response);
-                    const newRow = document.createElement('tr');
-                    const newCell = document.createElement('th');
-                    newCell.classList.add('price');
-                    newCell.innerHTML = price.split('"')[5].substring(1).replace('.', ',');
-                    newRow.appendChild(newCell);
-                    tableBody.appendChild(newRow);
-
-                    // Зберегти дані у масиві
-                    data.push(response);
+                    const price = response.lowest_price; // Отримання лише найнижчої ціни
+                    lowestPrices.push(price); // Додавання ціни до масиву
 
                     // Перевірка, чи це останній запит
-                    if (data.length === linkArray.length) {
-                        // Конвертувати масив даних у рядок JSON
-                        const jsonData = JSON.stringify(data);
+                    if (lowestPrices.length === linkArray.length) {
+                        // Конвертування масиву з найнижчими цінами у рядок JSON
+                        const jsonData = JSON.stringify(lowestPrices);
 
-                        // Створити посилання для завантаження файлу JSON зі сьогоднішньою датою в назві
+                        // Створення посилання для завантаження файлу JSON зі сьогоднішньою датою та часом в назві
                         const blob = new Blob([jsonData], { type: 'application/json' });
                         const url = URL.createObjectURL(blob);
                         const link = document.createElement('a');
                         link.href = url;
-                        link.download = `${today}.json`; // Використовуємо сьогоднішню дату в назві файлу
+                        link.download = `${today}.json`; // Використання сьогоднішньої дати та часу в назві файлу
                         document.body.appendChild(link);
                         link.click();
                         document.body.removeChild(link);
@@ -57,7 +51,7 @@ function fetchData() {
                 })
                 .catch(error => {
                     console.error('Error fetching data for', link + linkArray[i], ':', error);
-                    // Handle the error as needed
+                    // Обробка помилки за необхідності
                 });
         }, timer);
         timer += 5000;

@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7e695c6-bf3d-4c8f-b078-ffa01ea52d94" name="Changes" comment="adding existing data to json">
-      <change afterPath="$PROJECT_DIR$/assets/js/links.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
+    <list default="true" id="c7e695c6-bf3d-4c8f-b078-ffa01ea52d94" name="Changes" comment="created separate files of Js">
+      <change afterPath="$PROJECT_DIR$/assets/json/23.02.2024.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/style/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +85,12 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\madbo\Documents\GitHub\Steam-Price\assets\json" />
+      <recent name="C:\Users\madbo\Documents\GitHub\Steam-Price\assets\style" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -98,7 +105,7 @@
       <workItem from="1708700841333" duration="17000" />
       <workItem from="1708700865792" duration="78000" />
       <workItem from="1708700953034" duration="47000" />
-      <workItem from="1708701007977" duration="2373000" />
+      <workItem from="1708701007977" duration="3871000" />
     </task>
     <task id="LOCAL-00001" summary="FIx">
       <option name="closed" value="true" />
@@ -124,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708702320575</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="created separate files of Js">
+      <option name="closed" value="true" />
+      <created>1708703458332</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708703458332</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,7 +149,8 @@
     <MESSAGE value="FIx" />
     <MESSAGE value="generating table in js now" />
     <MESSAGE value="adding existing data to json" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding existing data to json" />
+    <MESSAGE value="created separate files of Js" />
+    <option name="LAST_COMMIT_MESSAGE" value="created separate files of Js" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
