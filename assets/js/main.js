@@ -6,18 +6,22 @@ const link = 'https://steamcommunity.com/market/priceoverview/?appid=730&currenc
 document.getElementById('output').innerHTML += 'Приблизний час очікування — ' + Math.round((linkArray.length*3)/60 ) + ' хвилин' + "<br/>";
 let timer = 0;
 
+// Функція для форматування ціни з формату "$0.63" у "0,63"
+function formatPrice(priceString) {
+    // Відкидаємо символ "$" та замінюємо кому на крапку
+    return priceString.substring(1).replace('.', ',');
+}
+
 function fetchData() {
     const tableBody = document.getElementById('table');
-    const lowestPrices = []; // Масив для збереження найнижчих цін
+    const data = []; // Масив для збереження отриманих даних
 
     // Отримання сьогоднішньої дати
     const currentDate = new Date();
     const day = String(currentDate.getDate()).padStart(2, '0');
     const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // "+1" бо місяці в JS починаються з 0
     const year = currentDate.getFullYear();
-    const hours = String(currentDate.getHours()).padStart(2, '0');
-    const minutes = String(currentDate.getMinutes()).padStart(2, '0');
-    const today = `${day}.${month}.${year}_${hours}:${minutes}`;
+    const today = `${day}.${month}.${year}`;
 
     for (let i = 0; i < linkArray.length; i++) {
         setTimeout(() => {
@@ -30,13 +34,14 @@ function fetchData() {
                 })
                 .then(response => {
                     const price = response.lowest_price; // Отримання лише найнижчої ціни
-                    lowestPrices.push(price); // Додавання ціни до масиву
+                    const formattedPrice = formatPrice(price); // Форматування ціни
+                    lowestPrices.push(formattedPrice); // Додавання форматованої ціни до масиву
 
-                    // Додаємо ціну до таблиці
+                    // Створення нового рядка для таблиці
                     const newRow = document.createElement('tr');
                     const newCell = document.createElement('th');
                     newCell.classList.add('price');
-                    newCell.textContent = price;
+                    newCell.innerHTML = formattedPrice; // Встановлення форматованої ціни
                     newRow.appendChild(newCell);
                     tableBody.appendChild(newRow);
 
