@@ -14,7 +14,7 @@ function formatPrice(priceString) {
 
 function fetchData() {
     const tableBody = document.getElementById('table');
-    const data = []; // Масив для збереження отриманих даних
+    // const data = []; // Масив для збереження отриманих даних
     const lowestPrices = []; // Оголошуємо масив для зберігання найнижчих цін
 
     // Отримання сьогоднішньої дати
@@ -24,7 +24,7 @@ function fetchData() {
     const year = currentDate.getFullYear();
     const hours = String(currentDate.getHours()).padStart(2, '0');
     const minutes = String(currentDate.getMinutes()).padStart(2, '0');
-    const today = `${day}.${month}.${year}_${hours}:${minutes}`;
+    const today = `${day}.${month}.${year}_(${hours}_${minutes})`;
 
     for (let i = 0; i < linkArray.length; i++) {
         setTimeout(() => {

@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7e695c6-bf3d-4c8f-b078-ffa01ea52d94" name="Changes" comment="fix">
-      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/style/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/RobotoFlex.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/RobotoFlex.ttf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +84,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\madbo\Documents\GitHub\Steam-Price\assets" />
       <recent name="C:\Users\madbo\Documents\GitHub\Steam-Price\assets\json" />
       <recent name="C:\Users\madbo\Documents\GitHub\Steam-Price\assets\style" />
     </key>
@@ -101,7 +103,7 @@
       <workItem from="1708700841333" duration="17000" />
       <workItem from="1708700865792" duration="78000" />
       <workItem from="1708700953034" duration="47000" />
-      <workItem from="1708701007977" duration="6445000" />
+      <workItem from="1708701007977" duration="6748000" />
     </task>
     <task id="LOCAL-00001" summary="FIx">
       <option name="closed" value="true" />
@@ -191,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708707569663</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix">
+      <option name="closed" value="true" />
+      <created>1708707643342</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1708707643342</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
