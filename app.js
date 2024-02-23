@@ -67,12 +67,12 @@ const linkArray = [
 document.getElementById('output').innerHTML += 'Приблизний час очікування — ' + Math.round((linkArray.length*3)/60 ) + ' хвилин' + "<br/>";
 let cost = document.getElementsByClassName('price'),
     timer = 0;
-const proxyUrl = 'https://crossorigin.me/';
+// const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
 function fetchData() {
     for (let i = 0; i < linkArray.length; i++) {
         setTimeout(() => {
-            fetch(proxyUrl + link + linkArray[i])
+            fetch(link + linkArray[i])
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -91,4 +91,3 @@ function fetchData() {
         timer += 5000;
     }
 }
-
