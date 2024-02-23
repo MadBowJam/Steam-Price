@@ -4,21 +4,18 @@
 // file:///D:/programming/SteamPrice/index.html;
 const link = 'https://steamcommunity.com/market/priceoverview/?appid=730&currency=1&market_hash_name=';
 document.getElementById('output').innerHTML += 'Приблизний час очікування — ' + Math.round((linkArray.length*3)/60 ) + ' хвилин' + "<br/>";
-let cost = document.getElementsByClassName('price'),
-    timer = 0;
+let timer = 0;
 
 function fetchData() {
     const tableBody = document.getElementById('table');
-    const lowestPrices = []; // Масив для збереження лише найнижчих цін
+    const lowestPrices = []; // Масив для збереження найнижчих цін
 
-    // Отримання сьогоднішньої дати та часу
+    // Отримання сьогоднішньої дати
     const currentDate = new Date();
     const day = String(currentDate.getDate()).padStart(2, '0');
     const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // "+1" бо місяці в JS починаються з 0
     const year = currentDate.getFullYear();
-    const hours = String(currentDate.getHours()).padStart(2, '0');
-    const minutes = String(currentDate.getMinutes()).padStart(2, '0');
-    const today = `${day}.${month}.${year}_${hours}:${minutes}`;
+    const today = `${day}.${month}.${year}`;
 
     for (let i = 0; i < linkArray.length; i++) {
         setTimeout(() => {
@@ -32,6 +29,14 @@ function fetchData() {
                 .then(response => {
                     const price = response.lowest_price; // Отримання лише найнижчої ціни
                     lowestPrices.push(price); // Додавання ціни до масиву
+
+                    // Додаємо ціну до таблиці
+                    const newRow = document.createElement('tr');
+                    const newCell = document.createElement('th');
+                    newCell.classList.add('price');
+                    newCell.textContent = price;
+                    newRow.appendChild(newCell);
+                    tableBody.appendChild(newRow);
 
                     // Перевірка, чи це останній запит
                     if (lowestPrices.length === linkArray.length) {
