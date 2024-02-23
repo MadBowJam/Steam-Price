@@ -69,6 +69,7 @@ let cost = document.getElementsByClassName('price'),
     timer = 0;
 
 function fetchData() {
+    const tableBody = document.getElementById('table');
     for (let i = 0; i < linkArray.length; i++) {
         setTimeout(() => {
             fetch(link + linkArray[i])
@@ -80,7 +81,13 @@ function fetchData() {
                 })
                 .then(response => {
                     const price = JSON.stringify(response);
-                    cost[i].innerHTML += price.split('"')[5].substring(1).replace('.', ',');
+                    // Створити новий рядок та вставити його в таблицю
+                    const newRow = document.createElement('tr');
+                    const newCell = document.createElement('th');
+                    newCell.classList.add('price');
+                    newCell.innerHTML = price.split('"')[5].substring(1).replace('.', ',');
+                    newRow.appendChild(newCell);
+                    tableBody.appendChild(newRow);
                 })
                 .catch(error => {
                     console.error('Error fetching data for', link + linkArray[i], ':', error);
