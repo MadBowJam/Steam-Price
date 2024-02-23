@@ -15,6 +15,7 @@ function formatPrice(priceString) {
 function fetchData() {
     const tableBody = document.getElementById('table');
     const data = []; // Масив для збереження отриманих даних
+    const lowestPrices = []; // Оголошуємо масив для зберігання найнижчих цін
 
     // Отримання сьогоднішньої дати
     const currentDate = new Date();
