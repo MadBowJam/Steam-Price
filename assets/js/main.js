@@ -15,7 +15,9 @@ function fetchData() {
     const day = String(currentDate.getDate()).padStart(2, '0');
     const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // "+1" бо місяці в JS починаються з 0
     const year = currentDate.getFullYear();
-    const today = `${day}.${month}.${year}`;
+    const hours = String(currentDate.getHours()).padStart(2, '0');
+    const minutes = String(currentDate.getMinutes()).padStart(2, '0');
+    const today = `${day}.${month}.${year}_${hours}:${minutes}`;
 
     for (let i = 0; i < linkArray.length; i++) {
         setTimeout(() => {
