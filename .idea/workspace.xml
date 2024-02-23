@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7e695c6-bf3d-4c8f-b078-ffa01ea52d94" name="Changes" comment="fix">
-      <change afterPath="$PROJECT_DIR$/assets/images/favico.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +101,7 @@
       <workItem from="1708700841333" duration="17000" />
       <workItem from="1708700865792" duration="78000" />
       <workItem from="1708700953034" duration="47000" />
-      <workItem from="1708701007977" duration="6355000" />
+      <workItem from="1708701007977" duration="6445000" />
     </task>
     <task id="LOCAL-00001" summary="FIx">
       <option name="closed" value="true" />
@@ -176,7 +175,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708707210364</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix">
+      <option name="closed" value="true" />
+      <created>1708707562993</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708707562993</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix">
+      <option name="closed" value="true" />
+      <created>1708707569663</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708707569663</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
