@@ -67,21 +67,28 @@ const linkArray = [
 document.getElementById('output').innerHTML += 'Приблизний час очікування — ' + Math.round((linkArray.length*3)/60 ) + ' хвилин' + "<br/>";
 let cost = document.getElementsByClassName('price'),
     timer = 0;
+const proxyUrl = 'https://crossorigin.me/';
 
 function fetchData() {
-    // Create a script tag for each request
     for (let i = 0; i < linkArray.length; i++) {
-        let script = document.createElement('script');
-        script.src = link + linkArray[i] + '&format=jsonp&callback=handleResponse';
-        document.body.appendChild(script);
+        setTimeout(() => {
+            fetch(proxyUrl + link + linkArray[i])
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(response => {
+                    const price = JSON.stringify(response);
+                    cost[i].innerHTML += price.split('"')[5].substring(1).replace('.', ',');
+                })
+                .catch(error => {
+                    console.error('Error fetching data for', link + linkArray[i], ':', error);
+                    // Handle the error as needed
+                });
+        }, timer);
+        timer += 5000;
     }
-}
-
-// Define the callback function to handle the response
-function handleResponse(data) {
-    // Find the matching element by the market hash name
-    let element = document.querySelector(`[data-market-hash-name="${data.market_hash_name}"]`);
-    // Update the price
-    element.innerHTML += data.lowest_price;
 }
 
