@@ -69,16 +69,9 @@ let cost = document.getElementsByClassName('price'),
     timer = 0;
 
 function fetchData() {
-    let index = 0;
-    const maxIndex = linkArray.length;
-
-    function fetchGroup() {
-        const promises = [];
-        const endIndex = Math.min(index + 5, maxIndex);
-
-        // Створити обіцянки для кожного запиту в групі
-        for (let i = index; i < endIndex; i++) {
-            const promise = fetch(link + linkArray[i])
+    for (let i = 0; i < linkArray.length; i++) {
+        setTimeout(() => {
+            fetch(link + linkArray[i])
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -93,20 +86,7 @@ function fetchData() {
                     console.error('Error fetching data for', link + linkArray[i], ':', error);
                     // Handle the error as needed
                 });
-            promises.push(promise);
-        }
-        
-        // Очікувати виконання всіх обіцянок у групі
-        Promise.all(promises).then(() => {
-            console.log('Група запитів завершена');
-            // Переміщення до наступної групи через 5 секунд
-            if (index < maxIndex) {
-                index = endIndex;
-                setTimeout(fetchGroup, 5000);
-            }
-        });
+        }, timer);
+        timer += 5000;
     }
-
-    // Почати першу групу запитів
-    fetchGroup();
 }
