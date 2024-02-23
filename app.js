@@ -70,6 +70,8 @@ let cost = document.getElementsByClassName('price'),
 
 function fetchData() {
     const tableBody = document.getElementById('table');
+    const data = []; // Масив для збереження отриманих даних
+
     for (let i = 0; i < linkArray.length; i++) {
         setTimeout(() => {
             fetch(link + linkArray[i])
@@ -81,13 +83,31 @@ function fetchData() {
                 })
                 .then(response => {
                     const price = JSON.stringify(response);
-                    // Створити новий рядок та вставити його в таблицю
                     const newRow = document.createElement('tr');
                     const newCell = document.createElement('th');
                     newCell.classList.add('price');
                     newCell.innerHTML = price.split('"')[5].substring(1).replace('.', ',');
                     newRow.appendChild(newCell);
                     tableBody.appendChild(newRow);
+
+                    // Зберегти дані у масиві
+                    data.push(response);
+
+                    // Перевірка, чи це останній запит
+                    if (data.length === linkArray.length) {
+                        // Конвертувати масив даних у рядок JSON
+                        const jsonData = JSON.stringify(data);
+
+                        // Створити посилання для завантаження файлу JSON
+                        const blob = new Blob([jsonData], { type: 'application/json' });
+                        const url = URL.createObjectURL(blob);
+                        const link = document.createElement('a');
+                        link.href = url;
+                        link.download = 'data.json';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    }
                 })
                 .catch(error => {
                     console.error('Error fetching data for', link + linkArray[i], ':', error);

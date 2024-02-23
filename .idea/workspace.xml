@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7e695c6-bf3d-4c8f-b078-ffa01ea52d94" name="Changes" comment="FIx">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="c7e695c6-bf3d-4c8f-b078-ffa01ea52d94" name="Changes" comment="generating table in js now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
@@ -18,7 +17,20 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -80,7 +92,7 @@
       <workItem from="1708700841333" duration="17000" />
       <workItem from="1708700865792" duration="78000" />
       <workItem from="1708700953034" duration="47000" />
-      <workItem from="1708701007977" duration="579000" />
+      <workItem from="1708701007977" duration="1274000" />
     </task>
     <task id="LOCAL-00001" summary="FIx">
       <option name="closed" value="true" />
@@ -90,7 +102,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708700682944</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="generating table in js now">
+      <option name="closed" value="true" />
+      <created>1708701630832</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1708701630832</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,7 +118,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="FIx" />
-    <option name="LAST_COMMIT_MESSAGE" value="FIx" />
+    <MESSAGE value="generating table in js now" />
+    <option name="LAST_COMMIT_MESSAGE" value="generating table in js now" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
