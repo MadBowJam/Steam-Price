@@ -59,3 +59,5 @@ const linkArray = [
     'Paris%202023%20Champions%20Autograph%20Capsule',
     'Sticker%20%7C%20Natus%20Vincere%20%28Gold%29%20%7C%20Paris%202023'
 ];
+
+export { linkArray };
