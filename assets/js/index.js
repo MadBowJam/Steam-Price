@@ -1,5 +1,5 @@
-import { linkArray } from './app/links.js';
-import { elements } from './app/createDOM.js';
+// import { linkArray } from './app/links.js';
+
 
 elements.map(({tag, ...props}) => document.body.appendChild(Object.assign(document.createElement(tag), props))); // Створення елементів вебсторінки в масиві elements та додавання їх до сторінки
 
@@ -40,3 +40,5 @@ function fetchData() { // Функція для перевірки цін
     timer += 5000; // Збільшення таймера
   }
 }
+
+import { elements } from './app/createDOM.js';
