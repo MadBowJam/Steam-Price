@@ -3,7 +3,7 @@ import { elements } from './app/createDOM.js';
 
 elements.map(({tag, ...props}) => document.body.appendChild(Object.assign(document.createElement(tag), props))); // Створення елементів вебсторінки в масиві elements та додавання їх до сторінки
 
-const link = `https://api.allorigins.win/raw?url=https://steamcommunity.com/market/priceoverview/?appid=730&currency=1&market_hash_name=`; // Посилання на API
+const link = `https://steamcommunity.com/market/priceoverview/?appid=730&currency=1&market_hash_name=`; // Посилання на API
 let timer = 0; // Лічильник
 
 function fetchData() { // Функція для перевірки цін
